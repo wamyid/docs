@@ -14,7 +14,7 @@ Tahapan ini dilakukan terlebih dahulu sebelum melakukan pendaftaran, hal-hal yan
 2. Siapkan URL WebHook sebagai penerima pesan masuk, kita akan melakukan test dahulu untuk mengetahui apa saja yang dikirim ke webhook bisa menggunakan layanan pipedream. Silahkan buka [Panduan Membuat Dummy WebHook](https://universitas.bukupedia.co.id/ws/Chapter02/)
 
 ## Pendaftaran WhatsApp Gateway Melalui Interface Web
-Proses nya tinggal buka [wa.my.id](https://wa.my.id) dengan urutan :
+Proses nya tinggal buka [wa.my.id](https://wa.my.id/login) dengan urutan :
 1. Scan QR Code dengan scanner QR atau tombol foto dari aplikasi whatsapp, kakak akan diarahkan masuk ke dalam situs.  
    ![image](https://github.com/whatsauth/whatsauth.github.io/assets/11188109/a4da833b-e267-4f1e-be93-c9f2244b55e2)  
 2. Input URL dan Secret Webhook kakak terus klik submit.
