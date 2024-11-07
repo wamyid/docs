@@ -172,6 +172,9 @@ Untuk file-file tambahan:
 1. [style.css](style.css)
 2. [loading.svg](loading.svg)
 
+Jangan lupa untuk menambahkan domainnya di Console APIs&Services - Client ID for Web application  
+![image](https://github.com/user-attachments/assets/12191720-6f6c-4155-bf75-d966b0f60c4c)
+
 
 ## Tidak merespon pesan
 Jika pesan yang dikirim tidak mendapatkan balasan dari webhook lebih dari 1 menit sejak pesan dikirim, maka coba langkah ini:
