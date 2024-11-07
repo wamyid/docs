@@ -52,8 +52,124 @@ Beberapa list fungsi API lainnya :
 2. Mencoba mengirimkan notif pesan kepada nomor telepon tujuan. Buka API message klik Try it out, isi to,isgroup dan message. Ketika klik execute maka akan ada notif pesan ke nomor tujuan dari nomor Gateway yang didaftarkan.
    ![image](https://github.com/whatsauth/whatsauth.github.io/assets/11188109/74d73883-2c91-4c22-a35c-1a4e2ef88977)  
 
-## QRCode Login
-API whatsauth dapat digunakan untuk pengembangan implementasi SSO, login menggunakan QR. Caranya deploy dahulu [JS ini](https://github.com/whatsauth/js).
+## Login Menggunakan WhatsAuth
+API whatsauth dapat digunakan untuk pengembangan implementasi SSO, login menggunakan QR dan Google SignIn. Buat repo baru yang berisi 3 file, yaitu:
+1. index.html : File html utama yang memanggil js qr dan gsi
+   ```html
+   <!DOCTYPE html>
+   <html lang="en">
+   <head>
+       <meta charset="UTF-8">
+       <meta http-equiv="X-UA-Compatible" content="IE=edge">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>WhatsAuth | Free WhatsApp API OTP Notif Broadcast Gratis</title>
+       <link href="style.css" rel="stylesheet">
+   	<script src="qr.js" type="module"></script>
+   	<script src="gsi.js" type="module"></script>
+   </head>
+   <body>
+    <div id="hasphonenumber" class="w-full h-screen bg-blue-100 flex items-center justify-center">
+        <div class="w-96 bg-white rounded-xl">
+            <p class="font-bold text-center mb-4" id="useracclog">Tap/Scan dengan <a href="./camwab.jpg" target="_blank">Camera WA</a></p>
+            <div class="flex justify-center mt-2 mb-4" id="whatsauthqr">
+                <img src="loading.svg">
+            </div>
+            <p class="font-bold text-center mb-4" id="whatsauthcounter">counter</p>
+            <p class="font-bold text-center mb-4" id="logs"><a href="https://wa.my.id">WhatsAuth Free WhatsApp Notif, OTP, API Gateway Gratis</a></p>
+        </div>
+    </div>
+   </body>
+   </html>   
+   ```
+2. qr.js : pengaturan login menggunakan qr
+   ```js
+   import {qrController,deleteCookie} from "https://cdn.jsdelivr.net/gh/whatsauth/js@0.2.1/whatsauth.js";
+   import { wauthparam } from "https://cdn.jsdelivr.net/gh/whatsauth/js@0.2.1/config.js";
+   
+   wauthparam.auth_ws="d3NzOi8vYXBpLndhLm15LmlkL3dzL3doYXRzYXV0aC9wdWJsaWM=";
+   //wauthparam.keyword="aHR0cHM6Ly93YS5tZS82Mjg5NTgwMDAwNjAwMD90ZXh0PXdoNHQ1YXV0aDA=";
+   wauthparam.keyword="aHR0cHM6Ly93YS5tZS82Mjg3NzUyMDAwMzAwP3RleHQ9d2g0dDVhdXRoMA==";
+   wauthparam.tokencookiehourslifetime=18;
+   wauthparam.redirect ="/auth"
+   deleteCookie(wauthparam.tokencookiename);
+   qrController(wauthparam);
+   ```
+3. gsi.js : pengaturan login menggunakan google sign in
+   ```js
+   import {setCookieWithExpireHour,getCookie} from "https://cdn.jsdelivr.net/gh/jscroot/lib@0.0.4/cookie.js";
+   import {postJSON} from "https://cdn.jsdelivr.net/gh/jscroot/lib@0.0.4/api.js";
+   import {redirect} from "https://cdn.jsdelivr.net/gh/jscroot/lib@0.0.4/url.js";
+   import {addCSS,addScriptInHead} from "https://cdn.jsdelivr.net/gh/jscroot/element@0.1.5/croot.js";
+   import Swal from 'https://cdn.jsdelivr.net/npm/sweetalert2@11/src/sweetalert2.js';
+   
+   window.handleCredentialResponse = gSignIn;
+   
+   await addCSS("https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.css");
+   
+   const target_url="https://asia-southeast2-awangga.cloudfunctions.net/bukupedia/auth/users";
+   
+   const client_id="239713755402-4hr2cva377m43rsqs2dk0c7f7cktfeph.apps.googleusercontent.com";
+   
+   // Panggil fungsi untuk menambahkan elemen
+   appendGoogleSignin(client_id);
+   
+   
+   // Buat fungsi untuk memanggil gsi js dan menambahkan elemen div ke dalam DOM
+   async function appendGoogleSignin(client_id) {
+       //import script google sign in
+       await addScriptInHead("https://accounts.google.com/gsi/client");
+       // Buat elemen div
+       const div = document.createElement("div");
+    
+       // Set atribut-atribut yang diperlukan
+       div.id = "g_id_onload";
+       div.setAttribute("data-client_id", client_id);
+       div.setAttribute("data-context", "signin");
+       div.setAttribute("data-ux_mode", "popup");
+       div.setAttribute("data-callback", "handleCredentialResponse");
+       div.setAttribute("data-auto_select", "true");
+       div.setAttribute("data-itp_support", "true");
+     
+       // Append elemen div ke body atau elemen lain yang diinginkan
+       document.body.appendChild(div);
+     }
+  
+
+   async function gSignIn(response) {
+       try {
+           const gtoken = { token: response.credential };
+           await postJSON(target_url, "login", getCookie("login"), gtoken, responsePostFunction);
+       } catch (error) {
+           console.error("Network or JSON parsing error:", error);
+           Swal.fire({
+               icon: "error",
+               title: "Network Error",
+               text: "An error occurred while trying to log in. Please try again.",
+           });
+       }
+   }
+   
+   
+   
+   function responsePostFunction(response) {
+       if (response.status === 200 && response.data) {
+           console.log(response.data);
+           setCookieWithExpireHour('login',response.data.token,18);
+           redirect("/dashboard");
+       } else {
+           console.error("Login failed:", response.data?.message || "Unknown error");
+           Swal.fire({
+               icon: "error",
+               title: "Login Failed",
+               text: response.data?.message || "Anda belum terdaftar dengan login google, silahkan tap atau scan qr dahulu untuk pendaftaran.",
+           }).then(() => {
+               redirect("/login");
+           });
+       }
+   }
+   ```
+
+
 
 ## Tidak merespon pesan
 Jika pesan yang dikirim tidak mendapatkan balasan dari webhook lebih dari 1 menit sejak pesan dikirim, maka coba langkah ini:
