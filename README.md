@@ -53,7 +53,7 @@ Beberapa list fungsi API lainnya :
    ![image](https://github.com/whatsauth/whatsauth.github.io/assets/11188109/74d73883-2c91-4c22-a35c-1a4e2ef88977)  
 
 ## Login Menggunakan WhatsAuth
-API whatsauth dapat digunakan untuk pengembangan implementasi SSO, login menggunakan QR dan Google SignIn. Buat repo baru yang berisi 4 file, yaitu:
+API whatsauth dapat digunakan untuk pengembangan implementasi SSO, login menggunakan QR dan Google SignIn. Buat repo baru yang berisi 3 file utama, yaitu:
 1. index.html : File html utama yang memanggil js qr dan gsi
    ```html
    <!DOCTYPE html>
@@ -168,8 +168,10 @@ API whatsauth dapat digunakan untuk pengembangan implementasi SSO, login menggun
        }
    }
    ```
-4. [style.css](style.css)
 
+Untuk file-file tambahan:
+1. [style.css](style.css)
+2. [loading.svg](loading.svg)
 
 
 ## Tidak merespon pesan
