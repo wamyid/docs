@@ -175,6 +175,10 @@ Untuk file-file tambahan:
 Jangan lupa untuk menambahkan domainnya di Console APIs&Services - Client ID for Web application  
 ![image](https://github.com/user-attachments/assets/12191720-6f6c-4155-bf75-d966b0f60c4c)
 
+Contoh URL webhook yang didaftarkan ke apidocs:  
+```txt
+https://asia-southeast2-awangga.cloudfunctions.net/bukupedia/webhook/nomor/6287752000300
+```
 
 ## Tidak merespon pesan
 Jika pesan yang dikirim tidak mendapatkan balasan dari webhook lebih dari 1 menit sejak pesan dikirim, maka coba langkah ini:
