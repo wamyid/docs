@@ -11,7 +11,8 @@ WhatsAuth menghadirkan solusi untuk :
 ## Persiapan WhatsApp Gateway
 Tahapan ini dilakukan terlebih dahulu sebelum melakukan pendaftaran, hal-hal yang harus dipersiapkan antara lain:
 1. Siapkan Nomor WhatsApp yang akan dijadikan Gateway API
-2. Siapkan URL WebHook sebagai penerima pesan masuk. Jika menggunakan [GoCroot](https://gocroot.if.co.id/) URL webhook akan tampak seperti ini `https://asia-southeast2-awangga.cloudfunctions.net/logiccoffee/webhook/nomor/62881022526506`. ganti `62881022526506` dengan nomor whatsapp anda dengan format 628xxx. dan sesuaikan URL `asia-southeast2-awangga` dan `logiccoffee` sesuai dengan project dan nama GCF.
+2. Siapkan URL WebHook sebagai penerima pesan masuk. Jika menggunakan [GoCroot](https://gocroot.if.co.id/) URL webhook akan tampak seperti ini `https://asia-southeast2-awangga.cloudfunctions.net/logiccoffee/webhook/nomor/62881022526506`. ganti `62881022526506` dengan nomor whatsapp anda dengan format 628xxx. dan sesuaikan URL `asia-southeast2-awangga` dan `logiccoffee` sesuai dengan project dan nama GCF.  
+   ![image](https://github.com/user-attachments/assets/c348b3f3-b5bf-4cc4-b6d1-2ce82ead218a)  
 3. Buat dahulu database dengan nama yang sesuai dengan keinginan kemudian edit pada file db.go folder config nama database yang sudah dibuat.
    ```go
    var mongoinfo = atdb.DBInfo{
