@@ -55,7 +55,7 @@ Proses nya pertama **login dulu di [wa.my.id](https://wa.my.id/login)** dengan u
    ![WhatsApp Image 2024-11-20 at 18 10 19_87591c0f](https://github.com/user-attachments/assets/a2391f42-addb-451e-a2c4-e4727cc9f52a)  
 5. Simpan token sementara yang muncul untuk digunakan di laman [apidocs](https://wa.my.id/apidocs/#/signup/signUpNewUser) untuk ditukar menjadi token yang berlaku selama 30 hari.  
    ![image](https://github.com/whatsauth/docs/assets/11188109/7e9548f6-0f3f-4892-95ce-12e7d645c698)  
-6. Kita akan melakukan uji pengiriman pesan untuk memastikan WhatsApp kita sudah terdaftar dengan baik. Masuk menu Kirim Pesan untuk mengirimkan pesan.  
+6. Kita akan melakukan uji pengiriman pesan ke nomor orang lain untuk memastikan WhatsApp kita sudah terdaftar dengan baik. Masuk menu Kirim Pesan untuk mengirimkan pesan.  
    ![image](https://github.com/whatsauth/docs/assets/11188109/83c31870-4f31-411e-871a-5b41b020717d)  
    ![image](https://github.com/whatsauth/docs/assets/11188109/81aa28df-10f8-4ebb-af6a-4ba9b98e8582)  
    Tunggu beberapa menit maka pesan akan sampai ke tujuan, pastikan nomor tujuan tidak memblokir nomor pengirim.
