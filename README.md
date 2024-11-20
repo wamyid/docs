@@ -34,7 +34,7 @@ Tahapan ini dilakukan terlebih dahulu sebelum melakukan pendaftaran, hal-hal yan
    Silahkan sesuaikan pada bagian token, phonenumber dan secret. Untuk nama bot sesuaikan di bagian botname dan triggerword.
 
 ## Pendaftaran WhatsApp Gateway Melalui Interface Web
-Proses nya tinggal buka [wa.my.id](https://wa.my.id/login) dengan urutan :
+Proses nya pertama **login dulu di [wa.my.id](https://wa.my.id/login)** dengan urutan :
 1. Scan QR Code dengan scanner QR atau tombol foto dari aplikasi whatsapp, kakak akan diarahkan masuk ke dalam situs.  
    ![image](https://github.com/whatsauth/whatsauth.github.io/assets/11188109/a4da833b-e267-4f1e-be93-c9f2244b55e2)  
 2. Input URL dan Secret Webhook kakak terus klik submit.
