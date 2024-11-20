@@ -11,7 +11,27 @@ WhatsAuth menghadirkan solusi untuk :
 ## Persiapan WhatsApp Gateway
 Tahapan ini dilakukan terlebih dahulu sebelum melakukan pendaftaran, hal-hal yang harus dipersiapkan antara lain:
 1. Siapkan Nomor WhatsApp yang akan dijadikan Gateway API
-2. Siapkan URL WebHook sebagai penerima pesan masuk. Jika menggunakan [GoCroot](https://gocroot.if.co.id/) URL webhook akan tampak seperti ini `https://asia-southeast2-awangga.cloudfunctions.net/logiccoffee/webhook/nomor/62881022526506 `. ganti `62881022526506` dengan nomor whatsapp anda dengan format 628xxx. dan sesuaikan URL `asia-southeast2-awangga` dan `logiccoffee` sesuai dengan project dan nama GCF.
+2. Siapkan URL WebHook sebagai penerima pesan masuk. Jika menggunakan [GoCroot](https://gocroot.if.co.id/) URL webhook akan tampak seperti ini `https://asia-southeast2-awangga.cloudfunctions.net/logiccoffee/webhook/nomor/62881022526506`. ganti `62881022526506` dengan nomor whatsapp anda dengan format 628xxx. dan sesuaikan URL `asia-southeast2-awangga` dan `logiccoffee` sesuai dengan project dan nama GCF.
+3. Pengguna GoCroot cukup untuk membuat collection baru bernama profile di dalam database kemudian isi dengan json:
+   ```json
+   {
+     "token": "v4.public.asdasfafdfsdfsdf",
+     "phonenumber": "62881022526506",
+     "secret": "secretkamuyangpanjangdanrumit089u08j32",
+     "url": "https://asia-southeast2-awangga.cloudfunctions.net/logiccoffee/webhook/nomor/62881022526506",
+     "urlapitext": "https://api.wa.my.id/api/v2/send/message/text",
+     "urlapiimage": "https://api.wa.my.id/api/send/message/image",
+     "urlapidoc": "https://api.wa.my.id/api/send/message/document",
+     "urlqrlogin": "https://api.wa.my.id/api/whatsauth/request",
+     "qrkeyword": "wh4t5auth0",
+     "publickey": "0d6171e848ee9efe0eca37a10813d12ecc9930d6f9b11d7ea594cac48648f022",
+     "botname": "lofe",
+     "triggerword": "lofe",
+     "telegramtoken": "",
+     "telegramname": ""
+   }
+   ```
+   Silahkan sesuaikan pada bagian token, phonenumber dan secret. Untuk nama bot sesuaikan di bagian botname dan triggerword.
 
 ## Pendaftaran WhatsApp Gateway Melalui Interface Web
 Proses nya tinggal buka [wa.my.id](https://wa.my.id/login) dengan urutan :
