@@ -67,10 +67,6 @@ Proses nya pertama **login dulu di [wa.my.id](https://wa.my.id/login)** dengan u
    ![image](https://github.com/whatsauth/whatsauth.github.io/assets/11188109/fd89a320-3228-4cad-85d8-ecefd9a324e5)
    ![image](https://github.com/whatsauth/docs/assets/11188109/c1573feb-d39b-4c33-8b29-a5ba9708e299)  
    Untuk pengguna GoCroot, pakai token balasan tersebut untuk di update ke dalam colection profile database mongo yang digunakan WeebHook
-
-## Panduan Development WebHook Disertai Contoh Program
-
-Silahkan buka [Panduan Deployment WebHook](/webhook)
    
 ## List fungsi API Lainnya
 Beberapa list fungsi API lainnya :
@@ -124,6 +120,7 @@ API whatsauth dapat digunakan untuk pengembangan implementasi SSO, login menggun
    deleteCookie(wauthparam.tokencookiename);
    qrController(wauthparam);
    ```
+   Ubah variabel `wauthparam.keyword` disesuaikan dengan nomor yang di daftarkan di WhatsAuth. Gunakan Base64 Decode dan Encode dengan melakukan update dari string keyword diatas untuk di update.
 3. gsi.js : pengaturan login menggunakan google sign in
    ```js
    import {setCookieWithExpireHour,getCookie} from "https://cdn.jsdelivr.net/gh/jscroot/lib@0.0.4/cookie.js";
@@ -204,6 +201,11 @@ Contoh URL webhook yang didaftarkan ke apidocs:
 ```txt
 https://asia-southeast2-awangga.cloudfunctions.net/bukupedia/webhook/nomor/6287752000300
 ```
+
+## Panduan Development WebHook Disertai Contoh Program
+
+Untuk pengembangan sendiri. Silahkan buka [Panduan Deployment WebHook](/webhook)
+
 
 ## Tidak merespon pesan
 Jika pesan yang dikirim tidak mendapatkan balasan dari webhook lebih dari 1 menit sejak pesan dikirim, maka coba langkah ini:
