@@ -39,7 +39,7 @@ Tahapan ini dilakukan terlebih dahulu sebelum melakukan pendaftaran, hal-hal yan
      "telegramname": ""
    }
    ```
-   Silahkan sesuaikan pada bagian token, phonenumber dan secret. Untuk nama bot sesuaikan di bagian botname dan triggerword.
+   Silahkan sesuaikan pada bagian token, phonenumber dan secret. Untuk nama bot sesuaikan di bagian botname dan triggerword. url disamakan dengan url webhook.
 
 ## Pendaftaran WhatsApp Gateway Melalui Interface Web
 Proses nya pertama **login dulu di [wa.my.id](https://wa.my.id/login)** dengan urutan :
