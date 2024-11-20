@@ -51,18 +51,19 @@ Proses nya pertama **login dulu di [wa.my.id](https://wa.my.id/login)** dengan u
    ![WhatsApp Image 2023-11-07 at 01 07 50_3f9cbb85](https://github.com/whatsauth/whatsauth.github.io/assets/11188109/a3e3bca7-d78e-4f74-a2fb-34ef850e91c3)  
    ![WhatsApp Image 2023-11-07 at 01 07 45_d9155096](https://github.com/whatsauth/whatsauth.github.io/assets/11188109/9e44609e-321d-43f6-b760-6a8f038a7411)  
    ![WhatsApp Image 2023-11-07 at 01 07 39_e0a1d259](https://github.com/whatsauth/whatsauth.github.io/assets/11188109/249fab3a-7bba-4b50-b160-41cd6fa825db)  
-   Tunggu beberapa menit hingga proses sinkronisasi WhatsApp selesai berjalan.
-4. Simpan token sementara yang muncul untuk digunakan di laman [apidocs](https://wa.my.id/apidocs/#/signup/signUpNewUser) untuk ditukar menjadi token yang berlaku selama 30 hari.  
+   Setelah itu beri nama whatsauth dan akan ada linked device yang baru pada whatsapp anda
+   ![WhatsApp Image 2024-11-20 at 18 10 19_87591c0f](https://github.com/user-attachments/assets/a2391f42-addb-451e-a2c4-e4727cc9f52a)  
+5. Simpan token sementara yang muncul untuk digunakan di laman [apidocs](https://wa.my.id/apidocs/#/signup/signUpNewUser) untuk ditukar menjadi token yang berlaku selama 30 hari.  
    ![image](https://github.com/whatsauth/docs/assets/11188109/7e9548f6-0f3f-4892-95ce-12e7d645c698)  
-5. Kita akan melakukan uji pengiriman pesan untuk memastikan WhatsApp kita sudah terdaftar dengan baik. Masuk menu Kirim Pesan untuk mengirimkan pesan.  
+6. Kita akan melakukan uji pengiriman pesan untuk memastikan WhatsApp kita sudah terdaftar dengan baik. Masuk menu Kirim Pesan untuk mengirimkan pesan.  
    ![image](https://github.com/whatsauth/docs/assets/11188109/83c31870-4f31-411e-871a-5b41b020717d)  
    ![image](https://github.com/whatsauth/docs/assets/11188109/81aa28df-10f8-4ebb-af6a-4ba9b98e8582)  
    Tunggu beberapa menit maka pesan akan sampai ke tujuan, pastikan nomor tujuan tidak memblokir nomor pengirim.
-6. Buka [Dokumen api](https://wa.my.id/apidocs/#/signup/signUpNewUser) untuk menukar token langkah sebelumnya menjadi token yang berlaku selama 30 hari.
-7. Klik bagian Authorize dan masukkan token ke dalam kolom Value: dan klik Authorize  
+7. Buka [Dokumen api](https://wa.my.id/apidocs/#/signup/signUpNewUser) untuk menukar token langkah sebelumnya menjadi token yang berlaku selama 30 hari.
+8. Klik bagian Authorize dan masukkan token ke dalam kolom Value: dan klik Authorize  
    ![image](https://github.com/whatsauth/whatsauth.github.io/assets/11188109/78d313a7-345f-40fe-9cf6-7cbf58fbba2e)  
    ![image](https://github.com/whatsauth/whatsauth.github.io/assets/11188109/54826caf-597a-4151-938c-bbb077b23741)
-8. Klik API signup, klik Try it out. Kemudian masukkan URL dan Secret dari WebHook yang sudah dibuat sebelumnya. Lihat respon, simpan baik baik token yang diterima, token tersebut berlaku selama 30 hari.
+9. Klik API signup, klik Try it out. Kemudian masukkan URL dan Secret dari WebHook yang sudah dibuat sebelumnya. Lihat respon, simpan baik baik token yang diterima, token tersebut berlaku selama 30 hari.
    ![image](https://github.com/whatsauth/whatsauth.github.io/assets/11188109/fd89a320-3228-4cad-85d8-ecefd9a324e5)
    ![image](https://github.com/whatsauth/docs/assets/11188109/c1573feb-d39b-4c33-8b29-a5ba9708e299)  
 
