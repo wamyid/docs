@@ -35,7 +35,7 @@ Tahapan ini dilakukan terlebih dahulu sebelum melakukan pendaftaran, hal-hal yan
 
 ## Pendaftaran WhatsApp Gateway Melalui Interface Web
 Proses nya pertama **login dulu di [wa.my.id](https://wa.my.id/login)** dengan urutan :
-1. Buka laman **[login wa.my.id](https://wa.my.id/login)**.Scan QR Code dengan scanner QR atau tombol foto dari aplikasi whatsapp, kakak akan diarahkan masuk ke dalam situs.  
+1. Buka laman **[login wa.my.id](https://wa.my.id/login)**. Scan QR Code dengan scanner QR atau tombol foto dari aplikasi whatsapp, kakak akan diarahkan masuk ke dalam situs.  
    ![image](https://github.com/whatsauth/whatsauth.github.io/assets/11188109/a4da833b-e267-4f1e-be93-c9f2244b55e2)  
 2. Input URL dan Secret Webhook kakak terus klik submit.
 3. Masukkan Pair Code ke WhatsApp yang ada di Handphone tunggu beberapa saat sampai proses loading di handphone selesai.  
