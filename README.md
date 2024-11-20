@@ -65,7 +65,8 @@ Proses nya pertama **login dulu di [wa.my.id](https://wa.my.id/login)** dengan u
    ![image](https://github.com/whatsauth/whatsauth.github.io/assets/11188109/54826caf-597a-4151-938c-bbb077b23741)
 9. Klik API signup, klik Try it out. Kemudian masukkan URL dan Secret dari WebHook yang sudah dibuat sebelumnya. Lihat respon, simpan baik baik token yang diterima, token tersebut berlaku selama 30 hari.
    ![image](https://github.com/whatsauth/whatsauth.github.io/assets/11188109/fd89a320-3228-4cad-85d8-ecefd9a324e5)
-   ![image](https://github.com/whatsauth/docs/assets/11188109/c1573feb-d39b-4c33-8b29-a5ba9708e299)  
+   ![image](https://github.com/whatsauth/docs/assets/11188109/c1573feb-d39b-4c33-8b29-a5ba9708e299)
+   Untuk pengguna GoCroot, pakai token balasan tersebut untuk di update ke dalam colection profile database mongo yang digunakan WeebHook
 
 ## Panduan Development WebHook Disertai Contoh Program
 
