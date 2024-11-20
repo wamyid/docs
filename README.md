@@ -121,7 +121,9 @@ API whatsauth dapat digunakan untuk pengembangan implementasi SSO, login menggun
    qrController(wauthparam);
    ```
    Ubah variabel `wauthparam.keyword` disesuaikan dengan nomor yang di daftarkan di WhatsAuth. Gunakan Base64 Decode dan Encode dengan melakukan update dari string keyword diatas untuk di update.
-3. gsi.js : pengaturan login menggunakan google sign in
+   ![image](https://github.com/user-attachments/assets/8e24a1ac-7249-45d3-8823-ee7f07c82058)  
+
+4. gsi.js : pengaturan login menggunakan google sign in
    ```js
    import {setCookieWithExpireHour,getCookie} from "https://cdn.jsdelivr.net/gh/jscroot/lib@0.0.4/cookie.js";
    import {postJSON} from "https://cdn.jsdelivr.net/gh/jscroot/lib@0.0.4/api.js";
