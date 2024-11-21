@@ -9,6 +9,9 @@ WhatsAuth menghadirkan solusi untuk :
 
 
 ## Persiapan WhatsApp Gateway
+
+[![WebHook](https://img.youtube.com/vi/-I-Mf0pQMxk/0.jpg)](https://www.youtube.com/watch?v=-I-Mf0pQMxk)
+
 Tahapan ini dilakukan terlebih dahulu sebelum melakukan pendaftaran, hal-hal yang harus dipersiapkan antara lain:
 1. Siapkan Nomor WhatsApp yang akan dijadikan Gateway API
 2. Siapkan URL WebHook sebagai penerima pesan masuk. Jika menggunakan [GoCroot](https://gocroot.if.co.id/) URL webhook akan tampak seperti ini `https://asia-southeast2-awangga.cloudfunctions.net/logiccoffee/webhook/nomor/62881022526506`. ganti `62881022526506` dengan nomor whatsapp anda dengan format 628xxx. dan sesuaikan URL `asia-southeast2-awangga` dan `logiccoffee` sesuai dengan project dan nama GCF.  
@@ -80,6 +83,9 @@ Beberapa list fungsi API lainnya :
    ![image](https://github.com/whatsauth/whatsauth.github.io/assets/11188109/74d73883-2c91-4c22-a35c-1a4e2ef88977)  
 
 ## Login Menggunakan WhatsAuth
+
+[![Tutorial Web](https://img.youtube.com/vi/2erAXAWQB6Q/0.jpg)](https://www.youtube.com/watch?v=2erAXAWQB6Q)
+
 API whatsauth dapat digunakan untuk pengembangan implementasi SSO, login menggunakan QR dan Google SignIn. Buat repo baru yang berisi 3 file utama, yaitu:
 1. index.html : File html utama yang memanggil js qr dan gsi
    ```html
