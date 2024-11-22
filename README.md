@@ -114,7 +114,8 @@ API whatsauth dapat digunakan untuk pengembangan implementasi SSO, login menggun
    </body>
    </html>   
    ```
-2. qr.js : pengaturan login menggunakan qr
+2. qr.js : pengaturan login menggunakan qr  
+   [![Setting Parameter](https://img.youtube.com/vi/2667pmLihLo/0.jpg)](https://www.youtube.com/watch?v=2667pmLihLo)  
    ```js
    import {qrController,deleteCookie} from "https://cdn.jsdelivr.net/gh/whatsauth/js@0.2.1/whatsauth.js";
    import { wauthparam } from "https://cdn.jsdelivr.net/gh/whatsauth/js@0.2.1/config.js";
