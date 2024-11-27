@@ -15,8 +15,12 @@ WhatsAuth menghadirkan solusi untuk :
 Tahapan ini dilakukan terlebih dahulu sebelum melakukan pendaftaran, hal-hal yang harus dipersiapkan antara lain:
 1. Siapkan Nomor WhatsApp yang akan dijadikan Gateway API
 2. Siapkan URL WebHook sebagai penerima pesan masuk. Jika menggunakan [GoCroot](https://gocroot.if.co.id/) URL webhook akan tampak seperti ini `https://asia-southeast2-awangga.cloudfunctions.net/logiccoffee/webhook/nomor/62881022526506`. ganti `62881022526506` dengan nomor whatsapp anda dengan format 628xxx. dan sesuaikan URL `asia-southeast2-awangga` dan `logiccoffee` sesuai dengan project dan nama GCF.  
-   ![image](https://github.com/user-attachments/assets/c348b3f3-b5bf-4cc4-b6d1-2ce82ead218a)  
-3. Buat dahulu database dengan nama yang sesuai dengan keinginan kemudian edit pada file db.go folder config nama database yang sudah dibuat.
+   ![image](https://github.com/user-attachments/assets/c348b3f3-b5bf-4cc4-b6d1-2ce82ead218a)
+   Contoh URL webhook yang didaftarkan ke apidocs:  
+   ```txt
+   https://asia-southeast2-awangga.cloudfunctions.net/bukupedia/webhook/nomor/6287752000300
+   ```
+4. Buat dahulu database dengan nama yang sesuai dengan keinginan kemudian edit pada file db.go folder config nama database yang sudah dibuat.
    ```go
    var mongoinfo = atdb.DBInfo{
 	   DBString: MongoString,
@@ -24,7 +28,7 @@ Tahapan ini dilakukan terlebih dahulu sebelum melakukan pendaftaran, hal-hal yan
    }
    ```
    Contoh diatas adalah nama database nya naskah
-4. Pengguna GoCroot cukup untuk membuat collection baru bernama profile di dalam database kemudian isi dengan json:
+5. Pengguna GoCroot cukup untuk membuat collection baru bernama profile di dalam database kemudian isi dengan json:
    ```json
    {
      "token": "v4.public.asdasfafdfsdfsdf",
@@ -206,12 +210,11 @@ Untuk file-file tambahan:
 Jangan lupa untuk menambahkan domainnya di Console APIs&Services - Client ID for Web application  
 ![image](https://github.com/user-attachments/assets/12191720-6f6c-4155-bf75-d966b0f60c4c)
 
-Contoh URL webhook yang didaftarkan ke apidocs:  
-```txt
-https://asia-southeast2-awangga.cloudfunctions.net/bukupedia/webhook/nomor/6287752000300
-```
 
-## Panduan Development WebHook Disertai Contoh Program
+
+## Integrasi WhatsAuth dengan JSCroot dan GOCroot
+
+[![Tutorial Web](https://img.youtube.com/vi/LDQ8Ty8B9eM/0.jpg)](https://www.youtube.com/watch?v=LDQ8Ty8B9eM)  
 
 Untuk pengembangan sendiri. Silahkan buka [Panduan Deployment WebHook](/webhook)
 
