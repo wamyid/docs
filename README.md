@@ -218,10 +218,3 @@ Jangan lupa untuk menambahkan domainnya di Console APIs&Services - Client ID for
 
 Untuk pengembangan sendiri. Silahkan buka [Panduan Deployment WebHook](/webhook)
 
-
-## Tidak merespon pesan
-Jika pesan yang dikirim tidak mendapatkan balasan dari webhook lebih dari 1 menit sejak pesan dikirim, maka coba langkah ini:
-1. Mencoba mengirimkan notif pesan kepada nomor telepon tujuan. Buka API message klik Try it out, isi to,isgroup dan message. Ketika klik execute maka akan ada notif "device belum di start".
-   ![image](https://github.com/whatsauth/whatsauth.github.io/assets/11188109/74d73883-2c91-4c22-a35c-1a4e2ef88977)  
-2. Start device pada bagian API device. Klik Try it out, kemudian masukkan token pada langkah sebelumnya. Ketika execute, maka akan ada balasan message dari server.
-   ![image](https://github.com/whatsauth/whatsauth.github.io/assets/11188109/2eaf0098-6e91-4733-b7ca-96e2483e5b58)  
