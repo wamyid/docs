@@ -273,7 +273,7 @@ function responseFunction(result){
     }
 }
 ```
-dan file style.css
+dan file [style.css](./auth/style.css)
 
 ## Integrasi WhatsAuth dengan JSCroot dan GOCroot
 
