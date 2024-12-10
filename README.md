@@ -48,6 +48,42 @@ Tahapan ini dilakukan terlebih dahulu sebelum melakukan pendaftaran, hal-hal yan
    }
    ```
    Silahkan sesuaikan pada bagian token, phonenumber dan secret. Untuk nama bot sesuaikan di bagian botname dan triggerword. url disamakan dengan url webhook.
+6. Pengguna GoCroot untuk login menggunakan google sign in, maka buat juga collection credentials yang berisi:
+   ```json
+   {
+	  "token": "##TOKEN##",
+	  "refresh_token": "##RTOKEN##",
+	  "token_uri": "https://oauth2.googleapis.com/token",
+	  "client_id": "##Client_ID##",
+	  "client_secret": "##CLIENTSECRET##",
+	  "scopes": [
+	    "https://www.googleapis.com/auth/spreadsheets",
+	    "https://www.googleapis.com/auth/documents",
+	    "https://www.googleapis.com/auth/drive",
+	    "https://www.googleapis.com/auth/blogger",
+	    "https://www.googleapis.com/auth/gmail.send",
+	    "https://www.googleapis.com/auth/gmail.readonly",
+	    "https://www.googleapis.com/auth/calendar",
+	    "https://www.googleapis.com/auth/drive.file"
+	  ],
+	  "expiry": "2024-06-13T17:27:35.666Z",
+	  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+	  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+	  "javascript_origins": [
+	    "https://whatsauth.my.id",
+	    "https://wa.my.id",
+	    "https://www.do.my.id"
+	  ],
+	  "project_id": "awangga",
+	  "redirect_uris": [
+	    "https://wa.my.id/gsign/",
+	    "https://www.do.my.id/login/"
+	  ],
+	  "tokentype": "Bearer",
+	  "accesstoken": "##ACCESSTOKEN##"
+   }
+   ```
+   Jangan lupa untuk setting PRKEY yang berisi private key paseto pada setting env atau secrets settings
 
 ## Pendaftaran WhatsApp Gateway Melalui Interface Web
 Proses nya pertama **login dulu di [wa.my.id](https://wa.my.id/login)** dengan urutan :
