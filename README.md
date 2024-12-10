@@ -210,7 +210,70 @@ Untuk file-file tambahan:
 Jangan lupa untuk menambahkan domainnya di Console APIs&Services - Client ID for Web application  
 ![image](https://github.com/user-attachments/assets/12191720-6f6c-4155-bf75-d966b0f60c4c)
 
+## Repo Auth
 
+Untuk melakukan otorisasi antara frontend dan backend maka diperlukan satu repo tambahan bernama auth(ada di settingan qr.js yaitu /auth).
+Pada file index.html
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="index.js" type="module"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Datang di Naskah Bukupedia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="scene">
+        <div class="shadow"></div>
+        <div class="jumper">
+          <div class="spinner">
+            <div class="scaler">
+              <div class="loader">
+                <div class="cuboid">
+                  <div class="cuboid__side"></div>
+                  <div class="cuboid__side"></div>
+                  <div class="cuboid__side"></div>
+                  <div class="cuboid__side"></div>
+                  <div class="cuboid__side"></div>
+                  <div class="cuboid__side"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+      </div>
+</body>
+</html>
+```
+
+Pada file index.js
+```js
+import {getCookie} from "https://cdn.jsdelivr.net/gh/jscroot/cookie@0.0.1/croot.js";
+import {getWithHeader} from "https://cdn.jsdelivr.net/gh/jscroot/api@0.0.6/croot.js";
+import {redirect} from "https://cdn.jsdelivr.net/gh/jscroot/url@0.0.9/croot.js";
+
+if (getCookie("login")){
+    getWithHeader("https://asia-southeast2-awangga.cloudfunctions.net/bukupedia/data/user","login",getCookie("login"),responseFunction);
+}else{
+    redirect("../");
+}
+
+
+function responseFunction(result){
+    console.log(result);
+    if(!('email' in result) || !('nik' in result) || !('pekerjaan' in result)|| !('alamatrumah' in result)|| !('alamatkantor' in result)){
+        redirect("/daftar");
+    }else if(!('bio' in result) || !('profpic' in result) || !('urlbio' in result)){
+        redirect("/daftar/bio.html");
+    }else if(('urlbio' in result)){
+        redirect("/dashboard");
+    }
+}
+```
+dan file style.css
 
 ## Integrasi WhatsAuth dengan JSCroot dan GOCroot
 
