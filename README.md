@@ -251,25 +251,23 @@ Pada file index.html
 
 Pada file index.js
 ```js
-import {getCookie} from "https://cdn.jsdelivr.net/gh/jscroot/cookie@0.0.1/croot.js";
-import {getWithHeader} from "https://cdn.jsdelivr.net/gh/jscroot/api@0.0.6/croot.js";
-import {redirect} from "https://cdn.jsdelivr.net/gh/jscroot/url@0.0.9/croot.js";
+import {getCookie} from "https://cdn.jsdelivr.net/gh/jscroot/lib@0.1.8/cookie.js";
+import {getJSON} from "https://cdn.jsdelivr.net/gh/jscroot/lib@0.1.8/api.js";
+import {redirect} from "https://cdn.jsdelivr.net/gh/jscroot/lib@0.1.8/url.js";
 
 if (getCookie("login")){
-    getWithHeader("https://asia-southeast2-awangga.cloudfunctions.net/bukupedia/data/user","login",getCookie("login"),responseFunction);
+    getJSON("https://asia-southeast2-awangga.cloudfunctions.net/florka/data/user","login",getCookie("login"),responseFunction);
 }else{
-    redirect("../");
+    redirect("/login");
 }
 
 
 function responseFunction(result){
     console.log(result);
-    if(!('email' in result) || !('nik' in result) || !('pekerjaan' in result)|| !('alamatrumah' in result)|| !('alamatkantor' in result)){
-        redirect("/daftar");
-    }else if(!('bio' in result) || !('profpic' in result) || !('urlbio' in result)){
-        redirect("/daftar/bio.html");
-    }else if(('urlbio' in result)){
+    if (result.status === 200){
         redirect("/dashboard");
+    }else{
+        redirect("/daftar");
     }
 }
 ```
