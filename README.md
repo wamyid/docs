@@ -10,9 +10,10 @@ WhatsAuth menghadirkan solusi untuk :
 Struct WhatsAuth
 ```go
 package model
-//Header yang dikirim ke webhook
+//Header yang dikirim ke webhook dan whatsauth
 type Header struct {
-	Secret string `reqHeader:"secret"`
+	Secret string `reqHeader:"secret,omitempty"` //whatsauth ke webhook
+	Token  string `reqHeader:"token,omitempty"`  //webhook ke whatsauth kirim pesan
 }
 //Body Message yang dikirim ke webhook
 type WAMessage struct {
