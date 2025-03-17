@@ -254,6 +254,16 @@ API whatsauth dapat digunakan untuk pengembangan implementasi SSO, login menggun
                client_id: client_id,
                callback:  (response) => gSignIn(response, target_url), // Menggunakan gSignIn sebagai callback untuk Google Sign-In
            });
+           // Render tombol Google Sign-In dalam elemen dengan id "tombolgsigngoogle"
+           google.accounts.id.renderButton(
+            document.getElementById("logs"),
+            {
+                theme: "outline", // Bisa "filled_blue", "filled_black", "outline"
+                size: "large", // Bisa "small", "medium", "large"
+                text: "signin_with", // Bisa "signin_with" atau "continue_with"
+                shape: "pill", // Bisa "rectangular", "pill", "circle", "square"
+            }
+           );
            // Memunculkan pop-up Google Sign-In
            google.accounts.id.prompt();
            console.log('Google Sign-In open successfully!');
