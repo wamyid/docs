@@ -62,6 +62,11 @@ type TextMessage struct {
 	Messages string `json:"messages"`
 }
 ```
+Kirim Pesan
+```go
+httpcode, resp, err = jsonapi.PostStructWithToken[model.Response]("Token", profile.Token, dt, WAAPIMessage)
+```
+
 
 ## Persiapan WhatsApp Gateway
 
